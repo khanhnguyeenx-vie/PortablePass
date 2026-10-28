@@ -122,3 +122,54 @@ So sánh với PortablePass: bước 2-4 thay cho "ký nonce". Ở Pass người
 2. **Baseline:** tắt Server (dừng `node server.js`) → thử đăng nhập và kiểm tra ở App A, B → ghi kết quả (dự kiến: cả hai đều thất bại).
 3. **PortablePass:** tắt Issuer App → thử check-in ở App A, B → ghi kết quả (dự kiến: vẫn kiểm tra được vì chỉ cần đọc chain).
 Điều cần chứng minh: khi bên cấp thẻ hoặc server ngừng, PortablePass vẫn xác minh được thẻ đã cấp.
+
+## 7. Giao diện App B (4 trạng thái)
+ 
+Khung chung: tiêu đề **"Kho tài liệu CLB"** ở trên cùng, nội dung ở giữa.
+ 
+### Trạng thái 1: Chưa kết nối
+```
++--------------------------------------+
+|        Kho tài liệu CLB              |
+|                                      |
+|  Hãy kết nối ví để xem tài liệu      |
+|                                      |
+|        [  Connect Wallet  ]          |
++--------------------------------------+
+```
+ 
+### Trạng thái 2: Đang xác minh
+```
++--------------------------------------+
+|        Kho tài liệu CLB              |
+|                                      |
+|  Hãy mở ví và ký xác nhận            |
+|            ( ... đang chờ ... )      |
++--------------------------------------+
+```
+ 
+### Trạng thái 3: Hợp lệ
+```
++--------------------------------------+
+|        Kho tài liệu CLB              |
+|                                      |
+|  Chào mừng thành viên CLB Tiếng Anh  |
+|                                      |
+|        [  Tải slide PDF  ]           |
++--------------------------------------+
+```
+ 
+### Trạng thái 4: Bị từ chối (3 biến thể)
+```
++--------------------------------------+
+|        Kho tài liệu CLB              |
+|                                      |
+|  Ví này chưa có thẻ thành viên       |
+|   (hoặc: Thẻ đã hết hạn)             |
+|   (hoặc: Thẻ đã bị thu hồi)          |
+|                                      |
+|           [  Thử lại  ]              |
++--------------------------------------+
+```
+ 
+Mỗi trạng thái tương ứng một nhánh `if` trong code ở tuần 6.
