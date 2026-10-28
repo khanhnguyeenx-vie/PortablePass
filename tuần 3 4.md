@@ -27,16 +27,7 @@ flowchart TD
 | expiry | INTEGER | Hạn dùng, tính bằng giây Unix | expiry |
 | revoked | INTEGER | 0 = còn hiệu lực, 1 = đã thu hồi | revoked |
  
-```sql
-CREATE TABLE IF NOT EXISTS members (
-  id       INTEGER PRIMARY KEY AUTOINCREMENT,
-  email    TEXT    NOT NULL,
-  club_id  TEXT    NOT NULL,
-  expiry   INTEGER NOT NULL,
-  revoked  INTEGER NOT NULL DEFAULT 0,
-  UNIQUE (email, club_id)
-);
-```
+
  
 `UNIQUE (email, club_id)` đảm bảo mỗi cặp (email, CLB) chỉ có một dòng, nên Revoke không bỏ sót dòng nào.
  
