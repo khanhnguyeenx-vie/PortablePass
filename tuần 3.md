@@ -1,4 +1,19 @@
-## Thiết kế bảng members
+# Thiết kế baseline SSO (Google Login + DB chung)
+
+Người làm: Đỗ Duy Hiếu · Tuần 3
+
+## 1. Sơ đồ kiến trúc
+(chèn ảnh ở đây)
+
+## 2. Thiết kế bảng members
+
+| Cột | Kiểu | Ý nghĩa | Tương ứng bên PortablePass |
+|---|---|---|---|
+| id | INTEGER | Khóa chính, tự tăng | (không cần) |
+| email | TEXT | Email Google của sinh viên | Địa chỉ ví |
+| club_id | TEXT | Mã CLB | clubId |
+| expiry | INTEGER | Hạn dùng (giây Unix) | expiry |
+| revoked | INTEGER | 0 = còn hiệu lực, 1 = đã thu hồi | revoked |
 
 ```sql
 CREATE TABLE IF NOT EXISTS members (
@@ -8,3 +23,19 @@ CREATE TABLE IF NOT EXISTS members (
   expiry   INTEGER NOT NULL,
   revoked  INTEGER NOT NULL DEFAULT 0,
   UNIQUE (email, club_id)
+);
+```
+
+Ghi chú: baseline lưu email (thông tin cá nhân), còn Pass chỉ lưu địa chỉ ví.
+
+## 3. Các API
+(điền tiếp)
+
+## 4. Luồng đăng nhập Google
+(điền tiếp)
+
+## 5. Kịch bản 6 bước bản baseline
+(điền tiếp)
+
+## 6. Kế hoạch đo
+(điền tiếp)
