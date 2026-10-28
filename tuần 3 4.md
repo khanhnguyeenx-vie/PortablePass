@@ -15,16 +15,6 @@ Người làm: Đỗ Duy Hiếu · Tuần 3
 | expiry | INTEGER | Hạn dùng (giây Unix) | expiry |
 | revoked | INTEGER | 0 = còn hiệu lực, 1 = đã thu hồi | revoked |
 
-```sql
-CREATE TABLE IF NOT EXISTS members (
-  id       INTEGER PRIMARY KEY AUTOINCREMENT,
-  email    TEXT    NOT NULL,
-  club_id  TEXT    NOT NULL,
-  expiry   INTEGER NOT NULL,
-  revoked  INTEGER NOT NULL DEFAULT 0,
-  UNIQUE (email, club_id)
-);
-```
 
 Ghi chú: baseline lưu email (thông tin cá nhân), còn Pass chỉ lưu địa chỉ ví.
 
