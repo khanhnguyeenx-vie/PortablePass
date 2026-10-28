@@ -3,12 +3,8 @@
 Người làm: Đỗ Duy Hiếu · Tuần 3 4
 
 ## 1. Sơ đồ kiến trúc
-# Thiết kế baseline SSO (Google Login + DB chung)
 
-Người làm: Đỗ Duy Hiếu · Tuần 3
-
-## 1. Sơ đồ kiến trúc
-Sơ đồ
+https://drive.google.com/open?id=1SMVoVKeyUjrToo-S7s6b_nLIUzPMvUk4&usp=drive_copy
 
 ## 2. Thiết kế bảng members
 
