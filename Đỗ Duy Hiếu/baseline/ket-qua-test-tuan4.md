@@ -1,6 +1,6 @@
 # Kết quả test baseline SSO (Tuần 4)
 
-Người làm: Đỗ Duy Hiếu · Ngày test: ____/____/2026
+Người làm: Đỗ Duy Hiếu · Ngày test: 29/10/2026
 
 Cách điền: chạy từng test theo thứ tự, ghi kết quả thấy trên terminal vào cột **Thực tế**, rồi đánh dấu **Đạt** (✅) hoặc **Không đạt** (❌). Ảnh chụp màn hình đặt trong thư mục `anh-test/` cùng cấp với file này.
 
